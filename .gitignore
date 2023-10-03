@@ -50,3 +50,5 @@ package.json
 
 /.vscode/
 /.idea/
+
+odoo-venv
