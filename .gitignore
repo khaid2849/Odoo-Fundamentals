@@ -56,3 +56,5 @@ odoo-venv
 .evn
 venv
 env
+
+odoo.conf
