@@ -44,8 +44,8 @@ class EstateProperty(models.Model):
         ],
         default="new",
     )
-    property_type_id = fields.Many2one("khaid.property_type", string="Property Type")
-    buyer = fields.Many2one("res.partner", string="Buyer")
+    property_type_id = fields.Many2one("khaid.property_type", string="Property Type", tracking=True)
+    buyer = fields.Many2one("res.partner", string="Buyer", tracking=True)
     seller = fields.Many2one(
-        "res.users", string="Seller", default=lambda self: self.env.user
+        "res.users", string="Seller", default=lambda self: self.env.user,tracking=True
     )
