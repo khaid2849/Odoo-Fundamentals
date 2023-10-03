@@ -1,0 +1,3 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+khaid_estate.access_khaid_estate,access_khaid_estate,khaid_estate.model_khaid_estate_property,base.group_user,1,1,1,1
+khaid_estate.access_khaid_property_type,access_khaid_property_type,khaid_estate.model_khaid_property_type,base.group_user,1,1,1,1
