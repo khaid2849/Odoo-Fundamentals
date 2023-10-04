@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_real_estate_property_type_form" model="ir.ui.view">
+        <field name="name">real.estate.property.type.form</field>
+        <field name="model">real.estate.property.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name" string="Property's Type"></field>
+                        <field name="description" string="Description"></field>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_real_estate_property_type_tree" model="ir.ui.view">
+        <field name="name">real.estate.property.type.tree</field>
+        <field name="model">real.estate.property.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name" string="Property's Type"/>
+                <field name="description" string="Description"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_real_estate_property_type_search" model="ir.ui.view">
+        <field name="name">real.estate.property.type.search</field>
+        <field name="model">real.estate.property.type</field>
+        <field name="arch" type="xml">
+            <search string="Property Type">
+                <field name="name" string="Property's Type"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_real_estate_property_type" model="ir.actions.act_window">
+        <field name="name">Property Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">real.estate.property.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id = "menu_real_estate_property_type" name="Property Type" parent="menu_real_estate_root" action="action_real_estate_property_type" sequence="10" />
+
+</odoo>

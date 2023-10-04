@@ -4,7 +4,8 @@ from dateutil.relativedelta import relativedelta
 
 
 class EstateProperty(models.Model):
-    _name = "khaid.estate_property"
+    _name = "real.estate.property"
+    # _inherit = "real.estate.property"
 
     name = fields.Char(string="Estate Property Name", required=True)
     description = fields.Text(string="Description")
@@ -44,8 +45,16 @@ class EstateProperty(models.Model):
         ],
         default="new",
     )
-    property_type_id = fields.Many2one("khaid.property_type", string="Property Type", tracking=True)
-    buyer = fields.Many2one("res.partner", string="Buyer", tracking=True)
+    property_type_id = fields.Many2one(
+        comodel_name="real.estate.property.type", string="Property Type"
+    )
+    buyer = fields.Many2one(comodel_name="res.partner", string="Buyer")
     seller = fields.Many2one(
-        "res.users", string="Seller", default=lambda self: self.env.user,tracking=True
+        comodel_name="res.users", string="Seller", default=lambda self: self.env.user
+    )
+    tag_ids = fields.Many2many(comodel_name="real.estate.property.tag", string="Tags")
+    offer_ids = fields.One2many(
+        comodel_name="real.estate.property.offer",
+        inverse_name="property_id",
+        string="Offers",
     )
