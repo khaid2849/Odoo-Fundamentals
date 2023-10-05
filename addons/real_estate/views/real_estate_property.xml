@@ -5,50 +5,64 @@
         <field name="model">real.estate.property</field>
         <field name="arch" type="xml">
             <form>
+                <header>
+                    <button name="action_cancel_porperty" type="object" string="Cancel" states="new, offer_recevied, offer_accepted" />
+                    <button name="action_sold_property" type="object" string="Sold" states="new, offer_recevied, offer_accepted"/>
+                    <field name="state" widget="statusbar" />
+                </header>
                 <sheet>
                     <group>
-                      <group>
-                        <field name="name" string="Property's Name"/>
-                        <field name="tag_ids" widget="many2many_tags" options="{'no_create':True}"/> 
-                        <field name="property_type_id" string="Property Type"/>
-                        <field name="postcode" string="Postcode"/>
-                      </group>
-                      <group>
-                        <field name="date_availability" string="Date Availability"/>
-                        <field name="expected_price" string="Expected Price"/>
-                        <field name="selling_price" string="Selling Price"/>
-                      </group>
-                      <notebook>
-                        <page string="Details">
-                          <group>                          
-                            <field name="bedrooms" string="Bedrooms"/>
-                            <field name="living_area" string="Living Area"/>
-                            <field name="facades" string="Facades"/>
-                            <field name="garage" string="Garage"/>
-                            <field name="garden" string="Garden"/>
-                            <field name="garden_area" string="Garden Area"/>
-                            <field name="garden_orientation" string="Garden Orientation"/>
-                            <field name="state" string="State"/>
-                          </group>
-                        </page>
-                        <page string="Offer">
-                            <group>
-                                <field name="offer_ids" mode="tree" string="Offer"/>
-                                <!-- <tree string="Offers">
-                                    <field name="price" string="Price"/>
-                                    <field name="status" string="Status"/>
-                                    <field name="partner_id" string="Partner"/>
-                                </tree> -->
-                            </group>    
-                        </page>
-                        <page string="Other Info">
-                            <group>
-                                <field name="seller" string="Salesman"/>
-                                <field name="buyer" string="Buyer"/>
-                            </group>
-                        </page>
-                      </notebook>
-                    </group>    
+                        <group>
+                            <field name="name" string="Property's Name" />
+                            <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                            <field name="property_type_id" string="Property Type" options="{'no_create_edit': True}"/>
+                            <field name="postcode" string="Postcode" />
+                        </group>
+                        <group> 
+                            <field name="date_availability" string="Date Availability" />
+                            <field name="expected_price" string="Expected Price" />
+                            <field name="selling_price" string="Selling Price" />
+                            <field name="best_offer" string="Best Offer" />
+                        </group>
+                        <notebook>
+                            <page string="Details">
+                                <group>
+                                    <group>
+                                        <field name="bedrooms" string="Bedrooms" />
+                                        <field name="facades" string="Facades" />
+                                        <field name="garage" string="Garage" />
+                                        <field name="garden" string="Garden" />
+                                        <field name="garden_orientation" string="Garden Orientation" attrs="{'invisible': [('garden', '=', False)]}"/>
+                                        <field name="state" string="State" />
+                                    </group>
+                                    <group>
+                                        <field name="living_area" string="Living Area" />
+                                        <field name="garden_area" string="Garden Area" attrs="{'invisible': [('garden', '=', False)]}"/>
+                                        <field name="total_area" string="Total Area" />
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Offer">
+                                <field name="offer_ids" attrs="{'readonly': [('state', '=', ['offer_accepted','sold','canceled'])]}">    
+                                    <tree>
+                                        <field name="price" string="Price" type="char"/>
+                                        <field name="partner_id" string="Partner" />
+                                        <field name="validity" string="Validity days" />
+                                        <field name="date_deadline" string="Deadline" />
+                                        <button name="action_accept_offer" type="object" icon="fa-check" attrs="{'invisible': [('state', 'in', ['sold','offer_accepted','canceled'])]}"/>
+                                        <button name="action_refuse_offer" type="object" icon="fa-times" attrs="{'invisible': [('state', 'in', ['sold','offer_accepted','canceled'])]}"/>
+                                        <field name="status" string="Status" />
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Other Info">
+                                <group>
+                                    <field name="seller" string="Salesman" />
+                                    <field name="buyer" string="Buyer" />
+                                </group>
+                            </page>
+                        </notebook>
+                    </group>
                 </sheet>
             </form>
         </field>
@@ -59,14 +73,14 @@
         <field name="model">real.estate.property</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name" string="Property's Name"/>
-                <field name="postcode" string="Postcode"/>
-                <field name="bedrooms" string="Bedrooms"/>
-                <field name="expected_price" string="Expected Price"/>
-                <field name="selling_price" string="Selling Price"/>
-                <field name="living_area" string="Living Area"/>
-                <field name="date_availability" string="Date Availability"/>
-                <field name="garden_orientation" string="Garden's Orientation"/>
+                <field name="name" string="Property's Name" />
+                <field name="postcode" string="Postcode" />
+                <field name="bedrooms" string="Bedrooms" />
+                <field name="expected_price" string="Expected Price" />
+                <field name="selling_price" string="Selling Price" />
+                <field name="living_area" string="Living Area" />
+                <field name="date_availability" string="Date Availability" />
+                <field name="garden_orientation" string="Garden's Orientation" />
                 <!-- <field name="facades"/>
                 <field name="garage"/>
                 <field name="garden"/>
@@ -82,21 +96,26 @@
         <field name="model">real.estate.property</field>
         <field name="arch" type="xml">
             <search string="Estate Property">
-                <field name="name" string="Property's Name"/>
-                <field name="postcode" string="Postcode"/>
-                <field name="expected_price" string="Expected Price"/>
-                <field name="bedrooms" string="Bedrooms"/>
-                <field name="living_area" string="Living Area (sqm)"/>
-                <field name="facades" string="Facades"/>
+                <field name="name" string="Property's Name" />
+                <field name="postcode" string="Postcode" />
+                <field name="expected_price" string="Expected Price" />
+                <field name="bedrooms" string="Bedrooms" />
+                <field name="living_area" string="Living Area (sqm)" />
+                <field name="facades" string="Facades" />
 
-                <filter string="Available" name="active" domain="[('active','=',False)]"/>
-                <filter string="Garden's Orientation North" name="garden_orientation_north" domain="[('garden_orientation','=','north')]"/>
-                <filter string="Garden's Orientation South" name="garden_orientation_south" domain="[('garden_orientation','=','south')]"/>
-                <filter string="Garden's Orientation East" name="garden_orientation_east" domain="[('garden_orientation','=','east')]"/>
-                <filter string="Garden's Orientation West" name="garden_orientation_west" domain="[('garden_orientation','=','west')]"/>
+                <filter string="Available" name="active" domain="[('active','=',False)]" />
+                <filter string="Garden's Orientation North" name="garden_orientation_north"
+                    domain="[('garden_orientation','=','north')]" />
+                <filter string="Garden's Orientation South" name="garden_orientation_south"
+                    domain="[('garden_orientation','=','south')]" />
+                <filter string="Garden's Orientation East" name="garden_orientation_east"
+                    domain="[('garden_orientation','=','east')]" />
+                <filter string="Garden's Orientation West" name="garden_orientation_west"
+                    domain="[('garden_orientation','=','west')]" />
 
-                <group expand="0" string="Group By"> 
-                    <filter string="Postcode" name="postcode" domain="" context="{'group_by': 'postcode'}"/>
+                <group expand="0" string="Group By">
+                    <filter string="Postcode" name="postcode" domain=""
+                        context="{'group_by': 'postcode'}" />
                 </group>
 
             </search>
@@ -110,5 +129,6 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id = "menu_real_estate_property" name="Properties" parent="menu_real_estate_root" action="action_real_estate_property" sequence="10" />
+    <menuitem id="menu_real_estate_property" name="Properties" parent="menu_real_estate_root"
+        action="action_real_estate_property" sequence="10" />
 </odoo>

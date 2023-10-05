@@ -10,6 +10,17 @@
                         <field name="name" string="Property's Type"></field>
                         <field name="description" string="Description"></field>
                     </group>
+                    <notebook>
+                        <page string="Properties">
+                            <field name="property_ids" string="Properties">
+                                <tree>
+                                    <field name="name" string="Property's Name"/>
+                                    <field name="expected_price" string="Expected Price"/>
+                                    <field name="state" string="Status"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
                 </sheet>
             </form>
         </field>
@@ -20,6 +31,7 @@
         <field name="model">real.estate.property.type</field>
         <field name="arch" type="xml">
             <tree>
+                <field name="sequence" widget="handle"/>
                 <field name="name" string="Property's Type"/>
                 <field name="description" string="Description"/>
             </tree>
