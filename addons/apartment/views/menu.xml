@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.menu" id="menu_apartment_root">
+        <field name="name">Khu công nghiệp</field>
+        <field name="sequence" eval="10"/>
+    </record>
+
+    <record model="ir.ui.menu" id="menu_bang_thong_tin_root">
+        <field name="name">Bảng thông tin</field>
+        <field name="parent_id" ref="menu_apartment_root"/>
+        <field name="sequence" eval="10"/>
+    </record>
+
+    <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_root">
+        <field name="name">Quản lý danh mục</field>
+        <field name="parent_id" ref="menu_apartment_root"/>
+        <field name="sequence" eval="10"/>
+    </record>
+
+    <!--    <menuitem id="menu_apartment_root" name="Khu công nghiệp" sequence="10"/>-->
+    <!--    <menuitem id="menu_bang_thong_tin_root" name="Bảng thông tin" parent="menu_apartment_root" sequence="10"/>-->
+    <!--    <menuitem id="menu_quan_ly_danh_muc_root" name="Quản lý danh mục" parent="menu_apartment_root" sequence="10"/>-->
+</odoo>

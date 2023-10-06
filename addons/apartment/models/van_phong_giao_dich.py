@@ -2,7 +2,7 @@ from odoo import models, fields
 
 
 class VanPhongDaiDien(models.Model):
-    _name = "apartment.van.phong.dai.dien"
+    _name = "apartment.van.phong.giao.dich"
     _description = "Model Văn Phòng Giao Dịch"
 
     quoc_gia = fields.Char(string="Quốc gia")

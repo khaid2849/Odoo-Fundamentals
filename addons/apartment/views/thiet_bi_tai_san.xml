@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="menu_thiet_bi_tai_san" model="ir.ui.menu">
+        <field name="name">Danh mục thiết bị, tài sản</field>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
+<!--        <field name="action" ref="action_apartment_tai_khoan"/>-->
+        <field name="sequence" eval="10"/>
+    </record>
+    <!--    <menuitem id="menu_thiet_bi_tai_san" name="Danh mục thiết bị, tài sản" parent="menu_quan_ly_danh_muc_root"-->
+    <!--              sequence="10"/>-->
+</odoo>

@@ -1,0 +1,8 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+apartment.access_apartment_chu_dau_tu,access_apartment_chu_dau_tu,apartment.model_apartment_chu_dau_tu,base.group_user,1,1,1,1
+apartment.access_apartment_nganh_nghe,access_apartment_nganh_nghe,apartment.model_apartment_nganh_nghe,base.group_user,1,1,1,1
+apartment.access_apartment_khach_hang,access_apartment_khach_hang,apartment.model_apartment_khach_hang,base.group_user,1,1,1,1
+apartment.access_apartment_tai_khoan,access_apartment_tai_khoan,apartment.model_apartment_tai_khoan,base.group_user,1,1,1,1
+apartment.access_apartment_so_do_kcn,access_apartment_so_do_kcn,apartment.model_apartment_so_do_kcn,base.group_user,1,1,1,1
+apartment.access_apartment_thong_tin_rieng,access_apartment_thong_tin_rieng,apartment.model_apartment_thong_tin_rieng,base.group_user,1,1,1,1
+apartment.access_apartment_van_phong_giao_dich,access_apartment_van_phong_giao_dich,apartment.model_apartment_van_phong_giao_dich,base.group_user,1,1,1,1

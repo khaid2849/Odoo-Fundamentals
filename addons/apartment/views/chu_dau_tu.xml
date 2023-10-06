@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_apartment_chu_dau_tu_tree" model="ir.ui.view">
+        <field name="name">apartment.chu.dau.tu.tree</field>
+        <field name="model">apartment.chu.dau.tu</field>
+        <field name="arch" type="xml">
+            <tree string="Danh mục chủ đầu tư" class="text-center">
+                <field name="ma" string="Mã"/>
+                <field name="loai_dinh_danh" string="Loại định danh" optional="show"/>
+                <field name="ma_dinh_danh" string="Mã định danh"/>
+                <field name="ten" string="Tên"/>
+                <field name="so_dien_thoai" string="Số điện thoại" optional="show"/>
+                <field name="email" string="Email" optional="show"/>
+                <field name="quoc_gia" string="Địa chỉ" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_apartment_chu_dau_tu_form" model="ir.ui.view">
+        <field name="name">apartment.chu.dau.tu.form</field>
+        <field name="model">apartment.chu.dau.tu</field>
+        <field name="arch" type="xml">
+            <form>
+                <link rel="stylesheet" href="/apartment/static/src/css/chu_dau_tu.css"></link>
+                <sheet>
+                    <group string="Thông tin chủ đầu tư">
+                        <group>
+                            <field name="loai_dinh_danh" string="Loại định danh" class="required"/>
+                            <field name="ten" string="Tên"/>
+                            <field name="email" string="Email"/>
+                        </group>
+                        <group>
+                            <field name="ma_dinh_danh" string="Mã định danh"/>
+                            <field name="so_dien_thoai" string="Số điện thoại"/>
+                            <label for="dia_chi" string="Địa chỉ" class="fw-bold"/>
+                            <div class="o_address_format">
+                                <field class="o_address_state" name="quoc_gia" placeholder="Quốc gia"/>
+                                <field class="o_address_state" name="tinh" placeholder="Tỉnh"/>
+                                <field class="o_address_state" name="quan" placeholder="Quận(Huyện)"/>
+                                <field class="o_address_state" name="phuong" placeholder="Phường(Xã)"/>
+                                <field class="o_address_street" name="duong" placeholder="Đường"/>
+                            </div>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="nguoi_dai_dien" string="Người đại diện"/>
+                        </group>
+                        <group>
+                            <field name="chuc_vu" string="Chức vụ"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="ghi_chu" string="Ghi chú"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_apartment_chu_dau_tu" model="ir.actions.act_window">
+        <field name="name">Danh mục chủ đầu tư</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">apartment.chu.dau.tu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="menu_chu_dau_tu" model="ir.ui.menu">
+        <field name="name">Danh mục chủ đầu tư</field>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
+        <field name="action" ref="action_apartment_chu_dau_tu"/>
+        <field name="sequence" eval="10"/>
+    </record>
+
+
+</odoo>

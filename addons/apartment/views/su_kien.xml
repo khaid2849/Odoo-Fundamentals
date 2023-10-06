@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_apartment_su_kien" model="ir.actions.act_window">
+        <field name="name">Sự kiện</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">apartment.nganh.nghe</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="menu_su_kien" model="ir.ui.menu">
+        <field name="name">Sự kiện</field>
+        <field name="parent_id" ref="menu_bang_thong_tin_root"/>
+        <field name="action" ref="action_apartment_su_kien"/>
+        <field name="sequence" eval="10"/>
+    </record>
+    <!--    <menuitem id="menu_su_kien" name="Sự kiện" parent="menu_bang_thong_tin_root" sequence="10" />-->
+</odoo>
