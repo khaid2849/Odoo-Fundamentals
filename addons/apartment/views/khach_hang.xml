@@ -9,9 +9,9 @@
 
     <record id="menu_khach_hang" model="ir.ui.menu">
         <field name="name">Danh mục khách hàng</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
-        <field name="action" ref="action_apartment_khach_hang"/>
-        <field name="sequence" eval="10"/>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
+        <field name="action" ref="action_apartment_khach_hang" />
+        <field name="sequence" eval="4" />
     </record>
     <!--    <menuitem id="menu_khach_hang" name="Danh mục khách hàng" parent="menu_quan_ly_danh_muc_root" sequence="10" />-->
 </odoo>

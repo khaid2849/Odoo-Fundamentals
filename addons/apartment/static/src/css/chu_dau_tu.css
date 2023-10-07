@@ -1,4 +1,5 @@
-.required:after{
-   color: red;
-   content: "*";
+.required::before {
+  content: "* ";
+  color: red;
+  font-weight: bold;
 }

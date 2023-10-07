@@ -5,7 +5,7 @@ class ThongTinRieng(models.Model):
     _name = "apartment.thong.tin.rieng"
     _description = "Model Thông tin riêng"
 
-    ten = fields.Char(string="Tên")
+    name = fields.Char(string="Tên")
     gia_tri = fields.Char(string="Giá trị")
     ten_loai = fields.Char(string="Tên loại")
     nguoi_cap_nhat = fields.Char(string="Người cập nhật")

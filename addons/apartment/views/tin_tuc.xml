@@ -9,9 +9,9 @@
 
     <record id="menu_tin_tuc" model="ir.ui.menu">
         <field name="name">Tin tức</field>
-        <field name="parent_id" ref="menu_bang_thong_tin_root"/>
-        <field name="action" ref="action_apartment_tin_tuc"/>
-        <field name="sequence" eval="10"/>
+        <field name="parent_id" ref="menu_bang_thong_tin_root" />
+        <field name="action" ref="action_apartment_tin_tuc" />
+        <field name="sequence" eval="1" />
     </record>
     <!--    <menuitem id="menu_tin_tuc" name="Tin tức" parent="menu_bang_thong_tin_root" sequence="10" />-->
 </odoo>
