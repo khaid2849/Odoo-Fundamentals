@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="custom_web_layout" inherit_id="web.layout">
+            <xpath expr="//body" position="inside">
+                <style>
+                    .o_main_navbar {
+                        background: linear-gradient(45deg, #0747a6, #0747a6);
+                        background-color: #0747a6!important;
+                        border-bottom: 0px;
+                    }
+                </style>
+            </xpath>
+        </template>
+    </data>
+</odoo>

@@ -6,37 +6,37 @@ class VanPhongGiaoDich(models.Model):
     _description = "Model Văn Phòng Giao Dịch"
 
     # Dia chi
-    dia_chi = fields.Char(string="Địa chỉ", inverse="_inverse_dia_chi")
-    quoc_gia = fields.Many2one(
-        string="Quốc gia", comodel_name="res.country", default="Việt Nam", required=True
+    address = fields.Char(string="Địa chỉ", inverse="_inverse_address")
+    country = fields.Many2one(
+        string="Quốc gia", comodel_name="res.country", required=True
     )
-    tinh = fields.Many2one(
+    state = fields.Many2one(
         comodel_name="res.country.state",
         string="Tỉnh(Thành phố)",
-        domain="[('country_id', '=', quoc_gia)]",
+        domain="[('country_id', '=', country)]",
         required=True,
     )
-    quan = fields.Many2one(
+    district = fields.Many2one(
         comodel_name="apartment.district",
         string="Quận(Huyện)",
-        domain="[('state_id', '=', tinh)]",
+        domain="[('state_id', '=', state)]",
         required=True,
     )
-    phuong = fields.Many2one(
+    ward = fields.Many2one(
         comodel_name="apartment.district.ward",
         string="Phường(Xã)",
         domain="[('district_id', '=', quan)]",
         required=True,
     )
-    duong = fields.Char(string="Đường", required=True)
+    street = fields.Char(string="Đường", required=True)
 
-    khach_hang_id = fields.One2many(
+    customer_id = fields.One2many(
         string="Khách hàng",
         comodel_name="apartment.khach.hang",
-        inverse_name="van_phong_giao_dich_id",
+        inverse_name="sales_office_id",
     )
 
-    @api.depends("quoc_gia", "tinh", "quan", "phuong", "duong")
-    def _inverse_dia_chi(self):
+    @api.depends("country", "state", "district", "ward", "street")
+    def _inverse_address(self):
         for record in self:
-            record.dia_chi = f"{record.duong}, {record.phuong}, {record.quan}, {record.tinh}, {record.quoc_gia}"
+            record.address = f"{record.street}, {record.ward}, {record.district}, {record.state}, {record.country}"

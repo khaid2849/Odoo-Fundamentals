@@ -1,5 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record id="view_apartment_nganh_nghe_tree" model="ir.ui.view">
+        <field name="name">apartment.nganh.nghe.tree</field>
+        <field name="model">apartment.nganh.nghe</field>
+        <field name="arch" type="xml">
+            <tree string="Danh mục ngành nghề" class="text-center" editable="bottom">
+                <field name="code" string="Mã" readonly="1" />
+                <field name="name" string="Tên" />
+                <field name="description" string="Ghi chú" optional="show" />
+                <field name="updater" string="Người cập nhật" optional="show" />
+                <field name="write_date" string="Ngày cập nhật" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="seq_nganh_nghe_code" model="ir.sequence">
+        <field name="name">Mã ngành nghề</field>
+        <field name="code">apartment.nganh.nghe.sequence</field>
+        <field name="padding">3</field>
+        <field name="number_increment">1</field>
+    </record>
+
     <record id="action_apartment_nganh_nghe" model="ir.actions.act_window">
         <field name="name">Danh mục ngành nghề</field>
         <field name="type">ir.actions.act_window</field>
@@ -9,9 +30,8 @@
 
     <record id="menu_nganh_nghe" model="ir.ui.menu">
         <field name="name">Danh mục ngành nghề</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
-        <field name="action" ref="action_apartment_nganh_nghe"/>
-        <field name="sequence" eval="10"/>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
+        <field name="action" ref="action_apartment_nganh_nghe" />
+        <field name="sequence" eval="10" />
     </record>
-    <!--    <menuitem id="menu_nganh_nghe" name="Danh mục ngành nghề" parent="menu_quan_ly_danh_muc_root" sequence="10" />-->
 </odoo>

@@ -9,6 +9,7 @@
     "description": "Apartment Management",
     "data": [
         "security/ir.model.access.csv",
+        "views/assets.xml",
         "views/menu.xml",
         "views/so_do_kcn.xml",
         "views/tai_khoan.xml",

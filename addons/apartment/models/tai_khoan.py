@@ -7,11 +7,15 @@ class TaiKhoan(models.Model):
 
     name = fields.Char(string="Tên", required=True)
     email = fields.Char(string="Email đăng nhập", required=True)
-    loai_tai_khoan = fields.Char(string="Loại tài khoản")
-    trang_thai = fields.Selection(
+    account_type = fields.Char(
+        string="Loại tài khoản",
+        required=True,
+    )
+    status = fields.Selection(
         string="Trạng thái",
         selection=[
             ("hoat_dong", "Hoạt động"),
             ("dung_hoat_dong", "Dừng hoạt động"),
         ],
+        required=True,
     )

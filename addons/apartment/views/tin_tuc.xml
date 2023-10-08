@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-    <record id="action_apartment_tin_tuc" model="ir.actions.act_window">
-        <field name="name">Sự kiện</field>
+    <!-- <record id="action_apartment_tin_tuc" model="ir.actions.act_window">
+        <field name="name">Tin tức</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">apartment.nganh.nghe</field>
         <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
     <record id="menu_tin_tuc" model="ir.ui.menu">
         <field name="name">Tin tức</field>
         <field name="parent_id" ref="menu_bang_thong_tin_root" />
-        <field name="action" ref="action_apartment_tin_tuc" />
+        <!-- <field name="action" ref="action_apartment_tin_tuc" /> -->
         <field name="sequence" eval="1" />
     </record>
-    <!--    <menuitem id="menu_tin_tuc" name="Tin tức" parent="menu_bang_thong_tin_root" sequence="10" />-->
 </odoo>
