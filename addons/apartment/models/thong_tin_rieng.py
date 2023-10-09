@@ -14,7 +14,6 @@ class ThongTinRieng(models.Model):
             ("b", "b"),
         ],
     )
-    updater = fields.Char(string="Người cập nhật")
     eficiency = fields.Boolean(string="Hiệu lực")
     customer_ids = fields.Many2one(
         string="Khách hàng", comodel_name="apartment.khach.hang"

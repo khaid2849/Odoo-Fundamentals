@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
+    <record id="view_apartment_so_do_kcn_tree" model="ir.ui.view">
+        <field name="name">apartment.so.do.kcn.tree</field>
+        <field name="model">apartment.so.do.kcn</field>
+        <field name="arch" type="xml">
+            <tree string="Sơ đồ Khu Công nghiệp" class="text-center">
+                <field name="name" string="Tên sơ đồ"/>
+                <field name="acreage" string="Diện tích"/>
+                <field name="write_uid" string="Người cập nhật" optional="show"/>
+                <field name="write_date" string="Ngày cập nhật" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_apartment_so_do_kcn_form" model="ir.ui.view">
+        <field name="name">apartment.so.do.kcn.form</field>
+        <field name="model">apartment.so.do.kcn</field>
+        <field name="arch" type="xml">
+            <form>
+                <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>
+                <sheet>
+                    <group>
+                        <group class="border" style="height:500px; width:280px;">
+                            <div>
+                                <div style="height:30px;margin-top:20px ">
+                                    <label for="name" class="required fw-bold" string="Tên sơ đồ"/>
+                                </div>
+                                <h4>
+                                    <field name="name" class="oe_inline"/>
+                                </h4>
+                                <div style="height:30px">
+                                    <label for="acreage" class="required fw-bold" string="Diện tích"/>
+                                </div>
+                                <h4>
+                                    <field name="acreage" class="oe_inline"/>
+                                </h4>
+                                <div style="height:30px">
+                                    <label for="address" string="Địa chỉ" class="fw-bold"/>
+                                </div>
+                                <h4>
+                                    <field name="address" class="oe_inline"/>
+                                </h4>
+                                <div style="height:30px">
+                                    <label for="diagram_file" class="required fw-bold" string="Tệp tin sơ đồ"/>
+                                </div>
+                                <h4>
+                                    <field name="diagram_file" class="oe_inline"/>
+                                </h4>
+                                <div style="height:30px">
+                                    <label for="url" string="URL" class="fw-bold"/>
+                                </div>
+                                <h4>
+                                    <field name="url" class="oe_inline" style="color:#0049B0;"/>
+                                </h4>
+                            </div>
+                        </group>
+
+                        <group class="border" style="height:500px; width:826px;">
+                            <field name="diagram_file" widget="image" nolabel="1" options="{'size': [700, 450]}"
+                                   class="img"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
     <record id="action_apartment_so_do_kcn" model="ir.actions.act_window">
-        <field name="name">Sơ đồ tổng thể khu công nghiệp</field>
+        <field name="name">Sơ đồ Khu Công nghiệp</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">apartment.so.do.kcn</field>
         <field name="view_mode">tree,form</field>
@@ -9,9 +75,8 @@
 
     <record id="menu_so_do_kcn" model="ir.ui.menu">
         <field name="name">Sơ đồ tổng thể KCN</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
-        <field name="action" ref="action_apartment_so_do_kcn" />
-        <field name="sequence" eval="1" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
+        <field name="action" ref="action_apartment_so_do_kcn"/>
+        <field name="sequence" eval="1"/>
     </record>
-    <!--    <menuitem id="menu_so_do_kcn" name="Sơ đồ tổng thể khu công nghiệp" parent="menu_quan_ly_danh_muc_root" sequence="10" />-->
 </odoo>

@@ -8,7 +8,7 @@
                 <field name="code" string="Mã" readonly="1" />
                 <field name="name" string="Tên" />
                 <field name="description" string="Ghi chú" optional="show" />
-                <field name="updater" string="Người cập nhật" optional="show" />
+                <field name="write_uid" string="Người cập nhật" optional="show" />
                 <field name="write_date" string="Ngày cập nhật" optional="show" />
             </tree>
         </field>

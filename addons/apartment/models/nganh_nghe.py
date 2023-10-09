@@ -9,7 +9,6 @@ class NganhNghe(models.Model):
     code = fields.Char(string="Mã")
     name = fields.Char(string="Tên")
     description = fields.Text(string="Ghi chú")
-    updater = fields.Char(string="Người cập nhật")
 
     @api.depends("write_date")
     def _compute_write_date(self):
@@ -22,7 +21,7 @@ class NganhNghe(models.Model):
     def create(self, vals):
         vals["code"] = self.env["ir.sequence"].next_by_code(
             "apartment.nganh.nghe.sequence"
-        ) or _("New")
+        ) or "New"
 
         res = super(NganhNghe, self).create(vals)
         return res
