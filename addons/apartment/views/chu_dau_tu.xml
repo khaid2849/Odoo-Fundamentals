@@ -20,7 +20,6 @@
         <field name="name">apartment.chu.dau.tu.form</field>
         <field name="model">apartment.chu.dau.tu</field>
         <field name="arch" type="xml">
-            <!--            <form style="font-family:Segoe UI;">-->
             <form>
                 <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>
                 <sheet>
@@ -86,6 +85,27 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="view_apartment_search" model="ir.ui.view">
+        <field name="name">apartment.chu.dau.tu.search</field>
+        <field name="model">apartment.chu.dau.tu</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code" string="Mã"/>
+                <field name="identifier" string="Mã định danh"/>
+                <field name="name" string="Tên"/>
+                <field name="phone" string="Số điện thoại"/>
+                <field name="email" string="Email"/>
+
+                <filter string="Đã lưu trữ" name="active" domain="[('active','=',False)]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Ngày tạo" name="create_date" domain="" context="{'group_by': 'create_date'}"/>
+                    <filter string="Người tạo" name="create_uid" domain="" context="{'group_by':'create_uid'}"/>
+                </group>
+            </search>
         </field>
     </record>
 

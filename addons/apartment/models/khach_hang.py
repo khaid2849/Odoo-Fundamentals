@@ -1,4 +1,10 @@
+import re
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+
+phone_pattern = r"^\+\d{1,12}$"
+email_pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
+tax_pattern = r"^(?=.*[0-9])(?=.*-)[0-9-]+$"
 
 
 class KhachHang(models.Model):
@@ -72,10 +78,41 @@ class KhachHang(models.Model):
         string="Thông tin riêng",
     )
 
+    @api.onchange("name")
+    def _onchange_name(self):
+        if self.customer_type == "to_chuc":
+            self.name.upper()
+        if self.customer_type == "ca_nhan":
+            self.name.capitalize()
+
     @api.depends("country", "state", "district", "ward", "street")
     def _inverse_address(self):
         for record in self:
             record.address = f"{record.street}, {record.ward}, {record.district}, {record.state}, {record.country}"
+
+    @api.constrains("phone")
+    def _check_phone_number(self):
+        for record in self:
+            if not re.match(phone_pattern, record.phone):
+                raise ValidationError("Định dạng số điện thoại không hợp lệ!")
+
+    @api.constrains("email")
+    def _check_email(self):
+        for record in self:
+            if not re.match(email_pattern, record.email):
+                raise ValidationError("Định dạng email không hợp lệ!")
+
+    @api.constrains("identifier")
+    def _check_tax_id(self):
+        for record in self:
+            if record.identifier_type == "ma_so_thue":
+                tax_id = record.identifier.replace(" ", "")
+                if len(tax_id) > 13:
+                    raise ValidationError("Định dạng mã số thuế không hợp lệ!")
+                if not re.match(tax_pattern, tax_id):
+                    raise ValidationError("Định dạng mã số thuế không hợp lệ!")
+                if "-" in tax_id[0] or "-" in tax_id[-1] or '--' in tax_id:
+                    raise ValidationError("Định dạng mã số thuế không hợp lệ!")
 
     @api.model
     def create(self, vals):

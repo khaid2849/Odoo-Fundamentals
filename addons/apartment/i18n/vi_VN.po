@@ -1,0 +1,635 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* apartment
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 16.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-10-10 07:05+0000\n"
+"PO-Revision-Date: 2023-10-10 07:05+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__active
+msgid "Active"
+msgstr "Đã lưu trữ"
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_bang_thong_tin_root
+msgid "Bảng thông tin"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__position
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__position
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Chức vụ"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__create_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__create_uid
+msgid "Created by"
+msgstr "Người tạo"
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__create_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__create_date
+msgid "Created on"
+msgstr "Ngày tạo"
+
+#. module: apartment
+#: model:ir.model.fields.selection,name:apartment.selection__apartment_khach_hang__customer_type__ca_nhan
+msgid "Cá nhân"
+msgstr ""
+
+#. module: apartment
+#: model:ir.actions.act_window,name:apartment.action_apartment_chu_dau_tu
+#: model:ir.ui.menu,name:apartment.menu_chu_dau_tu
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+msgid "Danh mục chủ đầu tư"
+msgstr ""
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_dich_vu_tien_ich
+msgid "Danh mục dịch vụ, tiện ích"
+msgstr ""
+
+#. module: apartment
+#: model:ir.actions.act_window,name:apartment.action_apartment_khach_hang
+#: model:ir.ui.menu,name:apartment.menu_khach_hang
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+msgid "Danh mục khách hàng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.actions.act_window,name:apartment.action_apartment_nganh_nghe
+#: model:ir.ui.menu,name:apartment.menu_nganh_nghe
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_nganh_nghe_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_tai_khoan_tree
+msgid "Danh mục ngành nghề"
+msgstr ""
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_thiet_bi_tai_san
+msgid "Danh mục thiết bị, tài sản"
+msgstr ""
+
+#. module: apartment
+#: model:ir.actions.act_window,name:apartment.action_apartment_tai_khoan
+#: model:ir.ui.menu,name:apartment.menu_tai_khoan
+msgid "Danh mục tài khoản"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__display_name
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_district
+msgid "District model"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__acreage
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_tree
+msgid "Diện tích"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__rented_land_area
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Diện tích đất thuê"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields.selection,name:apartment.selection__apartment_tai_khoan__status__dung_hoat_dong
+msgid "Dừng hoạt động"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__email
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__email
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Email"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__representative_email
+msgid "Email người đại diện"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__email
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_tai_khoan_tree
+msgid "Email đăng nhập"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__description
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__description
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__description
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_nganh_nghe_tree
+msgid "Ghi chú"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__value
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Giá trị"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Group By"
+msgstr "Nhóm theo"
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__eficiency
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Hiệu lực"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields.selection,name:apartment.selection__apartment_tai_khoan__status__hoat_dong
+msgid "Hoạt động"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__id
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__id
+msgid "ID"
+msgstr ""
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_apartment_root
+msgid "Khu công nghiệp"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields.selection,name:apartment.selection__apartment_chu_dau_tu__identifier_type__khac
+msgid "Khác"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__customer_ids
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__customer_id
+msgid "Khách hàng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_district____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng____last_update
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__write_uid
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__write_date
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__customer_type
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Loại khách hàng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__account_type
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_tai_khoan_tree
+msgid "Loại tài khoản"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__identifier_type
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__identifier_type
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+msgid "Loại định danh"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__business_areas
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Lĩnh vực kinh doanh"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_chu_dau_tu
+msgid "Model Chủ đầu tư"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_khach_hang
+msgid "Model Khách hàng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_nganh_nghe
+msgid "Model Ngành nghề"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_so_do_kcn
+msgid "Model Sơ đồ khu công nghiệp "
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_thong_tin_rieng
+msgid "Model Thông tin riêng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_tai_khoan
+msgid "Model Tài Khoản"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_van_phong_giao_dich
+msgid "Model Văn Phòng Giao Dịch"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__code
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__code
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_nganh_nghe_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Mã"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__customer_code
+msgid "Mã khách hàng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.constraint,message:apartment.constraint_apartment_khach_hang_uniq_name
+msgid "Mã khách hàng phải là duy nhất "
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.constraint,message:apartment.constraint_apartment_nganh_nghe_uniq_name
+msgid "Mã phải là duy nhất "
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields.selection,name:apartment.selection__apartment_chu_dau_tu__identifier_type__ma_so_thue
+msgid "Mã số thuế"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__identifier
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__identifier
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Mã định danh"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.constraint,message:apartment.constraint_apartment_chu_dau_tu_uniq_name
+msgid "Mã định danh phải là duy nhất"
+msgstr ""
+
+#. module: apartment
+#. odoo-python
+#: code:addons/apartment/models/chu_dau_tu.py:0
+#: code:addons/apartment/models/khach_hang.py:0
+#, python-format
+msgid "New"
+msgstr "MỚI"
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_nganh_nghe_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_tree
+msgid "Ngày cập nhật"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Ngày tạo"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_nganh_nghe_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_tree
+msgid "Người cập nhật"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Người tạo"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__representative
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__representative
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Người đại diện"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__ward
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__ward
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__ward
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Phường(Xã)"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__employee_size
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Quy mô nhân sự"
+msgstr ""
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_quan_ly_danh_muc_root
+msgid "Quản lý danh mục"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__district
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__district
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__district
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Quận(Huyện)"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__country
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__country
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__country
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Quốc gia"
+msgstr ""
+
+#. module: apartment
+#: model:ir.actions.act_window,name:apartment.action_apartment_so_do_kcn
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_tree
+msgid "Sơ đồ Khu Công nghiệp"
+msgstr ""
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_so_do_kcn
+msgid "Sơ đồ tổng thể KCN"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__phone
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__phone
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Số điện thoại"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__representative_phone
+msgid "Số điện thoại người đại diện"
+msgstr ""
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_su_kien
+msgid "Sự kiện"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "THÔNG TIN KHÁCH HÀNG"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "THÔNG TIN RIÊNG"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+msgid "Thông tin chủ đầu tư"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__private_information_ids
+msgid "Thông tin riêng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.ui.menu,name:apartment.menu_tin_tuc
+msgid "Tin tức"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__status
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_tai_khoan_tree
+msgid "Trạng thái"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__name
+#: model:ir.model.fields,field_description:apartment.field_apartment_nganh_nghe__name
+#: model:ir.model.fields,field_description:apartment.field_apartment_tai_khoan__name
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__name
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_nganh_nghe_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_tai_khoan_tree
+msgid "Tên"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__name
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Tên khách hàng"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_thong_tin_rieng__type_name
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Tên loại"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__name
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_tree
+msgid "Tên sơ đồ"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__abbreviations
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Tên viết tắt"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__diagram_file
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_form
+msgid "Tệp tin sơ đồ"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Tỉnh"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__state
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__state
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__state
+msgid "Tỉnh(Thành phố)"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields.selection,name:apartment.selection__apartment_khach_hang__customer_type__to_chuc
+msgid "Tổ chức"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_form
+msgid "URL"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__url
+msgid "Url"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__sales_office_id
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Văn phòng giao dịch"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model,name:apartment.model_apartment_district_ward
+msgid "Ward model"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__state_id
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__ward
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__district_id
+msgid "code"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_district__name
+#: model:ir.model.fields,field_description:apartment.field_apartment_district_ward__name
+msgid "name"
+msgstr ""
+
+#. module: apartment
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_search
+msgid "Đã lưu trữ"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__street
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__street
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__street
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+msgid "Đường"
+msgstr ""
+
+#. module: apartment
+#: model:ir.model.fields,field_description:apartment.field_apartment_chu_dau_tu__address
+#: model:ir.model.fields,field_description:apartment.field_apartment_khach_hang__address
+#: model:ir.model.fields,field_description:apartment.field_apartment_so_do_kcn__address
+#: model:ir.model.fields,field_description:apartment.field_apartment_van_phong_giao_dich__address
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_chu_dau_tu_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_form
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_khach_hang_tree
+#: model_terms:ir.ui.view,arch_db:apartment.view_apartment_so_do_kcn_form
+msgid "Địa chỉ"
+msgstr ""

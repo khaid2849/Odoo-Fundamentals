@@ -21,6 +21,5 @@
         "views/su_kien.xml",
         "views/tin_tuc.xml",
     ],
-    "js": ["static/src/js/custom_buttons.js"],
     "license": "LGPL-3",
 }
