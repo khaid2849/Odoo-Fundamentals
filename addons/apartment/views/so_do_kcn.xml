@@ -5,10 +5,10 @@
         <field name="model">apartment.so.do.kcn</field>
         <field name="arch" type="xml">
             <tree string="Sơ đồ Khu Công nghiệp" class="text-center">
-                <field name="name" string="Tên sơ đồ"/>
-                <field name="acreage" string="Diện tích"/>
-                <field name="write_uid" string="Người cập nhật" optional="show"/>
-                <field name="write_date" string="Ngày cập nhật" optional="show"/>
+                <field name="name" string="Tên sơ đồ" />
+                <field name="acreage" string="Diện tích" />
+                <field name="write_uid" string="Người cập nhật" optional="show" />
+                <field name="write_date" string="Ngày cập nhật" optional="show" />
             </tree>
         </field>
     </record>
@@ -24,41 +24,47 @@
                         <group class="border" style="height:500px; width:280px;">
                             <div>
                                 <div style="height:30px;margin-top:20px ">
-                                    <label for="name" class="required fw-bold" string="Tên sơ đồ"/>
+                                    <label for="name" class="required fw-bold" string="Tên sơ đồ" />
                                 </div>
                                 <h4>
-                                    <field name="name" class="oe_inline"/>
+                                    <field name="name" class="oe_inline" />
                                 </h4>
                                 <div style="height:30px">
-                                    <label for="acreage" class="required fw-bold" string="Diện tích"/>
+                                    <label for="acreage" class="required fw-bold" string="Diện tích" />
                                 </div>
                                 <h4>
-                                    <field name="acreage" class="oe_inline"/>
+                                    <field name="acreage" class="oe_inline" />
                                 </h4>
                                 <div style="height:30px">
-                                    <label for="address" string="Địa chỉ" class="fw-bold"/>
+                                    <label for="address" string="Địa chỉ" class="fw-bold" />
                                 </div>
                                 <h4>
-                                    <field name="address" class="oe_inline"/>
+                                    <field name="address" class="oe_inline" />
                                 </h4>
                                 <div style="height:30px">
-                                    <label for="diagram_file" class="required fw-bold" string="Tệp tin sơ đồ"/>
+                                    <label for="diagram_file" class="required fw-bold" string="Tệp tin sơ đồ" />
                                 </div>
                                 <h4>
-                                    <field name="diagram_file" class="oe_inline"/>
+                                    <field name="diagram_file" />
+                                    <!-- <div name="diagram_file" class="o_field_widget o_required_modifier o_field_binary oe_inline" style="width:100px">
+                                        <label class="o_select_file_button btn btn-primary" style="width:250px">
+                                            <span style="display:contents" name="diagram_file"> Tải lên tệp tin của bạn </span>
+                                            <input name="diagram_file" type="file" class="o_input_file o_hidden" accept="*" />
+                                        </label>
+                                    </div> -->
                                 </h4>
                                 <div style="height:30px">
-                                    <label for="url" string="URL" class="fw-bold"/>
+                                    <label for="url" string="URL" class="fw-bold" />
                                 </div>
                                 <h4>
-                                    <field name="url" class="oe_inline" style="color:#0049B0;"/>
+                                    <field name="url" class="oe_inline" style="color:#0049B0;" />
                                 </h4>
                             </div>
                         </group>
 
                         <group class="border" style="height:500px; width:826px;">
                             <field name="diagram_file" widget="image" nolabel="1" options="{'size': [700, 450]}"
-                                   class="img"/>
+                                class="img" />
                         </group>
                     </group>
                 </sheet>
@@ -75,8 +81,8 @@
 
     <record id="menu_so_do_kcn" model="ir.ui.menu">
         <field name="name">Sơ đồ tổng thể KCN</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
-        <field name="action" ref="action_apartment_so_do_kcn"/>
-        <field name="sequence" eval="1"/>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
+        <field name="action" ref="action_apartment_so_do_kcn" />
+        <field name="sequence" eval="1" />
     </record>
 </odoo>
