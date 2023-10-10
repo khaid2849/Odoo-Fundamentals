@@ -35,8 +35,10 @@ class ChuDauTu(models.Model):
     # Dia chi
     address = fields.Char(string="Địa chỉ", inverse="_inverse_address")
     country = fields.Many2one(
-        string="Quốc gia", comodel_name="res.country", required=True,
-        default=lambda self: self.env["res.country"].search([("code", "=", "VN")])
+        string="Quốc gia",
+        comodel_name="res.country",
+        required=True,
+        default=lambda self: self.env["res.country"].search([("code", "=", "VN")]),
     )
     state = fields.Many2one(
         comodel_name="res.country.state",
@@ -66,7 +68,7 @@ class ChuDauTu(models.Model):
 
     @api.onchange("identifier", "phone", "email")
     def _onchange_remove_space(self):
-        fields_to_process = ['identifier', 'phone', 'email']
+        fields_to_process = ["identifier", "phone", "email"]
         for field in fields_to_process:
             field_value = getattr(self, field, False)
             if field_value and isinstance(field_value, str):
@@ -79,20 +81,21 @@ class ChuDauTu(models.Model):
 
     @api.model
     def create(self, vals):
-        vals["code"] = self.env["ir.sequence"].next_by_code(
-            "apartment.chu.dau.tu.sequence"
-        ) or "New"
+        vals["code"] = (
+            self.env["ir.sequence"].next_by_code("apartment.chu.dau.tu.sequence")
+            or "New"
+        )
 
         partner_vals = {
-            'name': vals.get('name'),
-            'phone': vals.get('phone'),
-            'email': vals.get('email'),
-            'street': vals.get('street'),
-            'state_id': vals.get('state', False),
-            'country_id': vals.get('country', False),
+            "name": vals.get("name"),
+            "phone": vals.get("phone"),
+            "email": vals.get("email"),
+            "street": vals.get("street"),
+            "state_id": vals.get("state", False),
+            "country_id": vals.get("country", False),
         }
-        partner = self.env['res.partner'].create(partner_vals)
-        vals['partner_id'] = partner.id
+        partner = self.env["res.partner"].create(partner_vals)
+        vals["partner_id"] = partner.id
         return super(ChuDauTu, self).create(vals)
 
     @api.constrains("phone")
@@ -116,7 +119,7 @@ class ChuDauTu(models.Model):
                     raise ValidationError("Định dạng mã số thuế không hợp lệ!")
                 if not re.match(tax_pattern, tax_id):
                     raise ValidationError("Định dạng mã số thuế không hợp lệ!")
-                if "-" in tax_id[0] or "-" in tax_id[-1] or '--' in tax_id:
+                if "-" in tax_id[0] or "-" in tax_id[-1] or "--" in tax_id:
                     raise ValidationError("Định dạng mã số thuế không hợp lệ!")
 
     _sql_constraints = [

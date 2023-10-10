@@ -111,14 +111,15 @@ class KhachHang(models.Model):
                     raise ValidationError("Định dạng mã số thuế không hợp lệ!")
                 if not re.match(tax_pattern, tax_id):
                     raise ValidationError("Định dạng mã số thuế không hợp lệ!")
-                if "-" in tax_id[0] or "-" in tax_id[-1] or '--' in tax_id:
+                if "-" in tax_id[0] or "-" in tax_id[-1] or "--" in tax_id:
                     raise ValidationError("Định dạng mã số thuế không hợp lệ!")
 
     @api.model
     def create(self, vals):
-        vals["customer_code"] = self.env["ir.sequence"].next_by_code(
-            "apartment.khach.hang.sequence"
-        ) or _("New")
+        vals["customer_code"] = (
+            self.env["ir.sequence"].next_by_code("apartment.khach.hang.sequence")
+            or "New"
+        )
 
         res = super(KhachHang, self).create(vals)
         return res
