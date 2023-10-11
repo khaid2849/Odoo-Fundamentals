@@ -33,7 +33,7 @@ class ChuDauTu(models.Model):
     email = fields.Char(string="Email", required=True)
 
     # Dia chi
-    address = fields.Char(string="Địa chỉ", inverse="_inverse_address")
+    address = fields.Char(string="Địa chỉ", inverse="_inverse_address", reqired=True)
     country = fields.Many2one(
         string="Quốc gia",
         comodel_name="res.country",

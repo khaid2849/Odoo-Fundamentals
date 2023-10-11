@@ -18,7 +18,7 @@
         <field name="model">apartment.so.do.kcn</field>
         <field name="arch" type="xml">
             <form>
-<!--                <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>-->
+                <!--                <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>-->
                 <sheet>
                     <group>
                         <group class="border" style="height:500px; width:280px;">
