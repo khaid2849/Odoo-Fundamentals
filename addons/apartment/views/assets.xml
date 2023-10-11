@@ -3,43 +3,7 @@
     <data>
         <template id="custom_web_layout" inherit_id="web.layout">
             <xpath expr="//body" position="inside">
-                <style>
-                    .o_main_navbar {
-                        background: linear-gradient(45deg, #0747a6, #0747a6);
-                        background-color: #0747a6!important;
-                    }
-                    .o_main_navbar .o_menu_systray > * > .dropdown > a .badge {
-                        background-color: #3AADAA!important;
-                        color: #FF0000!important;
-                    }
-                    .o_searchview .o_searchview_facet .o_searchview_facet_label {
-                        background: #0049B0!important;
-                    }
-                    .btn-primary {
-                        color: #ffffff;
-                        background-color: #0049B0!important;
-                        border-color: #0049B0;
-                      }
-                    .btn-secondary, .btn-secondary:hover, .btn-secondary:active {
-                        color: #0049B0;
-                        background-color: #ffffff;
-                        border-color: #ffffff;
-                    }
-                    .btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:active {
-                        color: #0049B0;
-                        background-color: #FFFFFF;
-                        border-color: #0049B0;
-                        border-radius: 0.5px;
-                    }
-                    .form-check-input[type="checkbox"]{ 
-                        border-radius:0;
-                        border-color: #000000!important;
-                    }
-                    .form-check-input:checked{
-                        border-color: #017E84!important;
-                        background-color: #017E84!important;
-                    }
-                </style>
+<!--                <link rel="stylesheet" href="/apartment/static/src/css/assets.css"></link>-->
             </xpath>
         </template>
     </data>

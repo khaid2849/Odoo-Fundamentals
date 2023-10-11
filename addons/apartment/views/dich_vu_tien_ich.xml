@@ -7,10 +7,10 @@
     <!--        <field name="view_mode">tree,form</field>-->
     <!--    </record>-->
 
-    <record id="menu_dich_vu_tien_ich" model="ir.ui.menu">
-        <field name="name">Danh mục dịch vụ, tiện ích</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
+    <record id="menu_tong_quan_khu_cong_nghiep_dich_vu" model="ir.ui.menu">
+        <field name="name">Danh mục dịch vụ</field>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep" />
         <field name="action" ref="action_apartment_chu_dau_tu" />
-        <field name="sequence" eval="6" />
+        <field name="sequence" eval="30" />
     </record>
 </odoo>

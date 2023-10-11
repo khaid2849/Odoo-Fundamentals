@@ -6,6 +6,7 @@
     "version": "0.1",
     "author": "khaid",
     "category": "Administration",
+    "depends": ["base"],
     "description": "Apartment Management",
     "data": [
         "security/ir.model.access.csv",

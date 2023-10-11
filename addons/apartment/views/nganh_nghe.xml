@@ -28,10 +28,10 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="menu_nganh_nghe" model="ir.ui.menu">
+    <record id="menu_quan_ly_danh_muc_nganh_nghe" model="ir.ui.menu">
         <field name="name">Danh mục ngành nghề</field>
         <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
         <field name="action" ref="action_apartment_nganh_nghe" />
-        <field name="sequence" eval="10" />
+        <field name="sequence" eval="40" />
     </record>
 </odoo>

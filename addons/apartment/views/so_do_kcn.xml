@@ -18,7 +18,7 @@
         <field name="model">apartment.so.do.kcn</field>
         <field name="arch" type="xml">
             <form>
-                <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>
+<!--                <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>-->
                 <sheet>
                     <group>
                         <group class="border" style="height:500px; width:280px;">
@@ -46,12 +46,6 @@
                                 </div>
                                 <h4>
                                     <field name="diagram_file" />
-                                    <!-- <div name="diagram_file" class="o_field_widget o_required_modifier o_field_binary oe_inline" style="width:100px">
-                                        <label class="o_select_file_button btn btn-primary" style="width:250px">
-                                            <span style="display:contents" name="diagram_file"> Tải lên tệp tin của bạn </span>
-                                            <input name="diagram_file" type="file" class="o_input_file o_hidden" accept="*" />
-                                        </label>
-                                    </div> -->
                                 </h4>
                                 <div style="height:30px">
                                     <label for="url" string="URL" class="fw-bold" />
@@ -79,10 +73,10 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <record id="menu_so_do_kcn" model="ir.ui.menu">
+    <record id="menu_tong_quan_khu_cong_nghiep_so_do_kcn" model="ir.ui.menu">
         <field name="name">Sơ đồ tổng thể KCN</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep" />
         <field name="action" ref="action_apartment_so_do_kcn" />
-        <field name="sequence" eval="1" />
+        <field name="sequence" eval="10" />
     </record>
 </odoo>
