@@ -5,7 +5,7 @@ class VanPhongGiaoDich(models.Model):
     _name = "apartment.van.phong.giao.dich"
     _description = "Model Văn Phòng Giao Dịch"
 
-    # Dia ch
+    # Dia chi
     address = fields.Char(string="Địa chỉ", inverse="_inverse_address")
     country = fields.Many2one(
         string="Quốc gia", comodel_name="res.country", required=True
