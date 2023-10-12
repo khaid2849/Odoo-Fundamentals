@@ -10,3 +10,4 @@ class SoDoKCN(models.Model):
     address = fields.Char(string="Địa chỉ")
     diagram_file = fields.Image(string="Tệp tin sơ đồ", required=True)
     url = fields.Char(string="Url")
+    active = fields.Boolean()

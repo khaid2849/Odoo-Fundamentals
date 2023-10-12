@@ -80,7 +80,7 @@ class KhachHang(models.Model):
     representative_phone = fields.Char(string="Số điện thoại người đại diện")
     representative_email = fields.Char(string="Email người đại diện")
     position = fields.Char(string="Chức vụ")
-    description = fields.Char(string="Ghi chú")
+    description = fields.Text(string="Ghi chú")
 
     # Dia chi van phong giao dich
     sales_office_address = fields.Char(string="Văn phòng giao dịch")
@@ -121,13 +121,34 @@ class KhachHang(models.Model):
         if self.customer_type == "ca_nhan":
             self.name.capitalize()
 
-    @api.depends("country", "state", "district", "ward", "street",
-                 "so_country", "so_state", "so_district", "so_ward", "so_street")
+    @api.depends(
+        "country",
+        "state",
+        "district",
+        "ward",
+        "street",
+        "so_country",
+        "so_state",
+        "so_district",
+        "so_ward",
+        "so_street",
+    )
     def _inverse_address(self):
         for record in self:
-            address_fields = [record.street, record.ward, record.district, record.state, record.country]
-            so_address_fields = [record.so_street, record.so_ward, record.so_district, record.so_state,
-                                 record.so_country]
+            address_fields = [
+                record.street,
+                record.ward,
+                record.district,
+                record.state,
+                record.country,
+            ]
+            so_address_fields = [
+                record.so_street,
+                record.so_ward,
+                record.so_district,
+                record.so_state,
+                record.so_country,
+            ]
             record.address = ", ".join(filter(None, address_fields))
             record.sales_office_address = ", ".join(filter(None, so_address_fields))
 
@@ -158,8 +179,8 @@ class KhachHang(models.Model):
     @api.model
     def create(self, vals):
         vals["customer_code"] = (
-                self.env["ir.sequence"].next_by_code("apartment.khach.hang.sequence")
-                or "New"
+            self.env["ir.sequence"].next_by_code("apartment.khach.hang.sequence")
+            or "New"
         )
 
         res = super(KhachHang, self).create(vals)

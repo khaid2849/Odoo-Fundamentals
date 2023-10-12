@@ -7,16 +7,23 @@ class DichVu(models.Model):
 
     code = fields.Char(string="Mã", required=True)
     name = fields.Char(string="Tên", required=True)
-    provider = fields.Many2one(string="Nhà cung cấp", comodel_name="apartment.nha.cung.cap", required=True)
-    description = fields.Char(string="Ghi chú")
-    company_id = fields.Many2one(comodel_name="res.company", string='Company', index=True)
-    currency_id = fields.Many2one(comodel_name="res.currency", string='Currency', compute='_compute_currency_id')
+    provider = fields.Many2one(
+        string="Nhà cung cấp", comodel_name="apartment.nha.cung.cap", required=True
+    )
+    description = fields.Text(string="Ghi chú")
+    company_id = fields.Many2one(
+        comodel_name="res.company", string="Company", index=True
+    )
+    currency_id = fields.Many2one(
+        comodel_name="res.currency", string="Currency", compute="_compute_currency_id"
+    )
     price = fields.Float(string="Đơn giá", required=True)
     uom = fields.Many2one(string="Đơn vị tính", comodel_name="uom.uom", required=True)
     tax_id = fields.Many2many(
         comodel_name="account.tax",
         string="Thuế",
-        domain=[("type_tax_use", "=", "sale")])
+        domain=[("type_tax_use", "=", "sale")],
+    )
     product_id = fields.Many2one(comodel_name="product.template")
     active = fields.Boolean()
 
@@ -27,11 +34,13 @@ class DichVu(models.Model):
             if write_date:
                 service.write_date = write_date.strftime("%d/%M/%Y, %H:%M:%S")
 
-    @api.depends('company_id')
+    @api.depends("company_id")
     def _compute_currency_id(self):
-        main_company = self.env['res.company']._get_main_company()
+        main_company = self.env["res.company"]._get_main_company()
         for service in self:
-            service.currency_id = service.company_id.sudo().currency_id.id or main_company.currency_id.id
+            service.currency_id = (
+                service.company_id.sudo().currency_id.id or main_company.currency_id.id
+            )
 
     @api.model
     def create(self, vals):
@@ -46,10 +55,10 @@ class DichVu(models.Model):
         vals["product_id"] = product.id
         return super(DichVu, self).create(vals)
 
-    @api.onchange('code')
+    @api.onchange("code")
     def onchange_code(self):
         res = {}
         if self.code:
             self.code = ""
-            res['warning'] = {'title': 'Warning', 'message': 'Your Message Here.'}
+            res["warning"] = {"title": "Warning", "message": "Your Message Here."}
             return res

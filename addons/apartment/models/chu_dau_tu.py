@@ -62,7 +62,7 @@ class ChuDauTu(models.Model):
 
     representative = fields.Char(string="Người đại diện", required=True)
     position = fields.Char(string="Chức vụ")
-    description = fields.Char(string="Ghi chú")
+    description = fields.Text(string="Ghi chú")
     active = fields.Boolean(default=False)
     partner_id = fields.Many2one(comodel_name="res.partner")
 
@@ -82,8 +82,8 @@ class ChuDauTu(models.Model):
     @api.model
     def create(self, vals):
         vals["code"] = (
-                self.env["ir.sequence"].next_by_code("apartment.chu.dau.tu.sequence")
-                or "New"
+            self.env["ir.sequence"].next_by_code("apartment.chu.dau.tu.sequence")
+            or "New"
         )
 
         partner_vals = {

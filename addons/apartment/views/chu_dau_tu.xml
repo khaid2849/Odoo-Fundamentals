@@ -48,7 +48,7 @@
                             <field name="representative" stirng="Người đại diện" />
                         </group>
                         <group>
-                            <field name="position" stirng="Chức vụ" class="o_input" />
+                            <field name="position" stirng="Chức vụ" class="o_input" style="width:95%;margin-left:8%;" />
                         </group>
                     </group>
                     <group>
