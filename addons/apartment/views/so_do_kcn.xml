@@ -18,49 +18,42 @@
         <field name="model">apartment.so.do.kcn</field>
         <field name="arch" type="xml">
             <form>
-                <!--                <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>-->
                 <sheet>
-                    <group>
-                        <group class="border" style="height:500px; width:280px;">
-                            <div>
-                                <div style="height:30px;margin-top:20px ">
-                                    <label for="name" class="required fw-bold" string="Tên sơ đồ" />
-                                </div>
-                                <h4>
-                                    <field name="name" class="oe_inline" />
-                                </h4>
-                                <div style="height:30px">
-                                    <label for="acreage" class="required fw-bold" string="Diện tích" />
-                                </div>
-                                <h4>
-                                    <field name="acreage" class="oe_inline" />
-                                </h4>
-                                <div style="height:30px">
-                                    <label for="address" string="Địa chỉ" class="fw-bold" />
-                                </div>
-                                <h4>
-                                    <field name="address" class="oe_inline" />
-                                </h4>
-                                <div style="height:30px">
-                                    <label for="diagram_file" class="required fw-bold" string="Tệp tin sơ đồ" />
-                                </div>
-                                <h4>
-                                    <field name="diagram_file" />
-                                </h4>
-                                <div style="height:30px">
-                                    <label for="url" string="URL" class="fw-bold" />
-                                </div>
-                                <h4>
-                                    <field name="url" class="oe_inline" style="color:#0049B0;" />
-                                </h4>
-                            </div>
-                        </group>
+                    <div>
+                        <label for="name" />
+                        <h3>
+                            <field name="name" />
+                        </h3>
+                    </div>
+                    <div>
 
-                        <group class="border" style="height:500px; width:826px;">
-                            <field name="diagram_file" widget="image" nolabel="1" options="{'size': [700, 450]}"
-                                class="img" />
+                        <label for="acreage" />
+                        <group>
+                            <h3>
+                                <field name="acreage" />
+                            </h3>
+                            <h3>
+                                <field name="uom" style="width:40%" />
+                            </h3>
                         </group>
-                    </group>
+                    </div>
+                    <div>
+                        <label for="address" />
+                        <h3>
+                            <field name="address" class="o_input" />
+                        </h3>
+                        <label for="description" />
+                        <h3>
+                            <field name="description" class="o_input" />
+                        </h3>
+                        <label for="diagram_file" />
+                        <h3>
+                            <field name="diagram_file" />
+                        </h3>
+                    </div>
+                </sheet>
+                <sheet>
+                    <field name="diagram_file" widget="image" />
                 </sheet>
             </form>
         </field>

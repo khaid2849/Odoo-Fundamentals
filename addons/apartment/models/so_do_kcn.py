@@ -7,7 +7,8 @@ class SoDoKCN(models.Model):
 
     name = fields.Char(string="Tên sơ đồ", required=True)
     acreage = fields.Float(string="Diện tích", required=True)
+    uom = fields.Many2one(string="Đơn vị tính", comodel_name="uom.uom", required=True)
     address = fields.Char(string="Địa chỉ")
     diagram_file = fields.Image(string="Tệp tin sơ đồ", required=True)
-    url = fields.Char(string="Url")
+    description = fields.Char(string="Mô tả")
     active = fields.Boolean()
