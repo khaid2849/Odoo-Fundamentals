@@ -2,21 +2,21 @@
 <odoo>
     <record model="ir.ui.menu" id="menu_apartment_root">
         <field name="name">QLKCN</field>
-        <field name="sequence" eval="30" />
+        <field name="sequence" eval="30"/>
     </record>
 
     <!--    Bảng thông tin menu-->
     <record model="ir.ui.menu" id="menu_bang_thong_tin_root">
         <field name="name">Bảng thông tin</field>
-        <field name="parent_id" ref="menu_apartment_root" />
-        <field name="sequence" eval="10" />
+        <field name="parent_id" ref="menu_apartment_root"/>
+        <field name="sequence" eval="10"/>
     </record>
 
     <!--    #Quản lý danh mục-->
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_root">
         <field name="name">Quản lý danh mục</field>
-        <field name="parent_id" ref="menu_apartment_root" />
-        <field name="sequence" eval="20" />
+        <field name="parent_id" ref="menu_apartment_root"/>
+        <field name="sequence" eval="20"/>
     </record>
 
     <!--    Quản lý danh mục >Tổng quan Khu Công nghiệp > Sơ đồ tổng thể KCN-->
@@ -24,26 +24,26 @@
     <!--                                                 > Danh mục dịch vụ-->
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep">
         <field name="name">Tổng quan Khu công nghiệp</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
-        <field name="sequence" eval="10" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
+        <field name="sequence" eval="10"/>
     </record>
 
     <record model="ir.ui.menu" id="menu_tong_quan_khu_cong_nghiep_so_do_kcn">
         <field name="name">Sơ đồ tổng thể KCN</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep" />
-        <field name="sequence" eval="10" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep"/>
+        <field name="sequence" eval="10"/>
     </record>
 
     <record model="ir.ui.menu" id="menu_tong_quan_khu_cong_nghiep_thiet_bi_tai_san">
         <field name="name">Danh mục thiết bị, tài sản</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep" />
-        <field name="sequence" eval="20" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep"/>
+        <field name="sequence" eval="20"/>
     </record>
 
     <record model="ir.ui.menu" id="menu_tong_quan_khu_cong_nghiep_dich_vu">
         <field name="name">Danh mục dịch vụ</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep" />
-        <field name="sequence" eval="30" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep"/>
+        <field name="sequence" eval="30"/>
     </record>
 
 
@@ -52,39 +52,39 @@
     <!--                                       > Danh mục khách hàng-->
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_lien_he">
         <field name="name">Danh mục liên hệ</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
-        <field name="sequence" eval="20" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
+        <field name="sequence" eval="20"/>
     </record>
 
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_lien_he_chu_dau_tu">
         <field name="name">Danh mục chủ đầu tư</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he" />
-        <field name="sequence" eval="10" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he"/>
+        <field name="sequence" eval="10"/>
     </record>
 
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_lien_he_nha_cung_cap">
         <field name="name">Danh mục nhà cung cấp</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he" />
-        <field name="sequence" eval="20" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he"/>
+        <field name="sequence" eval="20"/>
     </record>
 
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_lien_he_khach_hang">
         <field name="name">Danh mục khách hàng</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he" />
-        <field name="sequence" eval="30" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he"/>
+        <field name="sequence" eval="30"/>
     </record>
 
     <!-- Quản lý danh mục > Danh mục địa chính-->
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_dia_chinh">
         <field name="name">Danh mục địa chính</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
-        <field name="sequence" eval="30" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
+        <field name="sequence" eval="30"/>
     </record>
 
     <!-- Quản lý danh mục > Danh mục ngành nghề-->
     <record model="ir.ui.menu" id="menu_quan_ly_danh_muc_nganh_nghe">
         <field name="name">Danh mục ngành nghề</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_root" />
-        <field name="sequence" eval="40" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_root"/>
+        <field name="sequence" eval="40"/>
     </record>
 </odoo>

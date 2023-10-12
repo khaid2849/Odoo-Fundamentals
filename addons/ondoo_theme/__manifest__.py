@@ -19,7 +19,7 @@
             "/ondoo_theme/static/src/scss/base_enterprise.scss",
             "/ondoo_theme/static/src/js/ondoo_user_menu.js",
             "/ondoo_theme/static/src/js/ondoo_required_fields_label.js",
-            # "/ondoo_theme/static/src/xml/view_base.xml",
+            "/ondoo_theme/static/src/xml/view_base.xml",
         ],
         # 'web.assets_qweb': [
         #     'account/static/src/xml/**/*',

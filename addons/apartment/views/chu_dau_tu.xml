@@ -59,7 +59,7 @@
         </field>
     </record>
 
-    <record id="view_apartment_search" model="ir.ui.view">
+    <record id="view_chu_dau_tu_search" model="ir.ui.view">
         <field name="name">apartment.chu.dau.tu.search</field>
         <field name="model">apartment.chu.dau.tu</field>
         <field name="arch" type="xml">

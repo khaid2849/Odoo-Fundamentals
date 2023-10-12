@@ -64,7 +64,7 @@ class ChuDauTu(models.Model):
     position = fields.Char(string="Chức vụ")
     description = fields.Char(string="Ghi chú")
     active = fields.Boolean(default=False)
-    partner_id = fields.Many2one("res.partner")
+    partner_id = fields.Many2one(comodel_name="res.partner")
 
     @api.onchange("identifier", "phone", "email")
     def _onchange_remove_space(self):
@@ -82,8 +82,8 @@ class ChuDauTu(models.Model):
     @api.model
     def create(self, vals):
         vals["code"] = (
-            self.env["ir.sequence"].next_by_code("apartment.chu.dau.tu.sequence")
-            or "New"
+                self.env["ir.sequence"].next_by_code("apartment.chu.dau.tu.sequence")
+                or "New"
         )
 
         partner_vals = {

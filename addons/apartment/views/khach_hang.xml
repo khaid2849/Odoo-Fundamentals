@@ -22,127 +22,84 @@
         <field name="model">apartment.khach.hang</field>
         <field name="arch" type="xml">
             <form>
-                <link rel="stylesheet" href="/apartment/static/src/css/apartment.css"></link>
                 <sheet>
                     <group string="THÔNG TIN KHÁCH HÀNG">
                         <group>
-                            <label for="customer_type" string="Loại khách hàng" class="required"/>
-                            <div>
-                                <field name="customer_type" string="Loại khách hàng" widget="radio"
-                                       options="{'horizontal': true}"/>
-                            </div>
-                        </group>
-                        <group></group>
-                        <group>
-                            <label for="identifier_type" string="Loại định danh" class="required"/>
-                            <div>
-                                <field name="identifier_type" string="Loại định danh"/>
-                            </div>
-                            <label for="name" string="Tên khách hàng" class="required"/>
-                            <div>
-                                <field name="name" string="Tên khách hàng"/>
-                            </div>
-                            <label for="email" string="Email" class="required"/>
-                            <div>
-                                <field name="email" string="Email"/>
-                            </div>
-                            <label for="employee_size" string="Quy mô nhân sự"/>
-                            <div>
-                                <field name="employee_size" string="Quy mô nhân sự"/>
-                            </div>
-                            <label for="address" string="Địa chỉ" class="required fw-bold"/>
-                            <field name="address" invisible="1"/>
+                            <field name="customer_type" string="Loại khách hàng" widget="radio"
+                                   options="{'horizontal': true}"/>
+                            <field name="identifier_type" string="Loại định danh"/>
+                            <field name="name" string="Tên khách hàng"/>
+                            <field name="email" string="Email"/>
+                            <field name="employee_size" string="Quy mô nhân sự" class="o_input"/>
+                            <label for="address" class="ondoo_required_label fw-bold" string="Địa chỉ">
+                                <field name="address" invisible="1"/>
+                            </label>
                             <div class="o_address_format">
-                                <field class="o_address_state" name="country" placeholder="Quốc gia"
+                                <field name="country" placeholder="Quốc gia" class="o_address_city"
                                        options="{'no_create': True, 'no_open':True}"/>
-                                <field class="o_address_state" name="state" placeholder="Tỉnh"
+                                <field name="state" class="o_address_state" placeholder="Tỉnh(Thành phố)"
                                        domain="[('country_id', '=', country)]"
                                        options="{'no_create': True, 'no_open':True}"/>
-                                <field class="o_address_state" name="district" placeholder="Quận(Huyện)"
+                                <field name="district" placeholder="Quận(Huyện)" class="o_address_city"
                                        domain="[('state_id', '=', state)]"
                                        options="{'no_create': True, 'no_open':True}"/>
-                                <field class="o_address_state" name="ward" placeholder="Phường(Xã)"
+                                <field name="ward" class="o_address_state" placeholder="Phường(Xã)"
                                        domain="[('district_id', '=', district)]"
                                        options="{'no_create': True, 'no_open':True}"/>
-                                <field class="o_address_street" name="street" placeholder="Đường"/>
+                                <div name="street" class="d-flex justify-content-between">
+                                    <field name="street" placeholder="Đường" class="o_address_country"/>
+                                </div>
                             </div>
-                        </group>
-
-                        <group>
-                            <label for="identifier" string="Mã định danh" class="required"/>
-                            <div>
-                                <field name="identifier" string="Mã định danh"/>
-                            </div>
-                            <label for="abbreviations" string="Tên viết tắt"/>
-                            <div>
-                                <field name="abbreviations" string="Tên viết tắt"/>
-                            </div>
-                            <label for="phone" string="Số điện thoại" class="required"/>
-                            <div>
-                                <field name="phone" string="Số điện thoại"/>
-                            </div>
-                            <label for="business_areas" string="Lĩnh vực kinh doanh" class="required"/>
-                            <div>
-                                <field name="business_areas" string="Lĩnh vực kinh doanh"/>
-                            </div>
-<!--                            <label for="sales_office_id" string="Văn phòng giao dịch" class="required fw-bold"-->
-<!--                                   attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}" widget="many2one"/>-->
-<!--                            <field name="sales_office_id" invisible="1">-->
-<!--                                <div class="o_address_format" attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}">-->
-<!--                                    <field class="o_address_state" name="country" placeholder="Quốc gia"-->
-<!--                                           options="{'no_create_edit': True}"/>-->
-<!--                                    <field class="o_address_state" name="state" placeholder="Tỉnh"-->
-<!--                                           domain="[('country_id', '=', country)]" options="{'no_create_edit': True}"/>-->
-<!--                                    <field class="o_address_state" name="district" placeholder="Quận(Huyện)"-->
-<!--                                           domain="[('state_id', '=', state)]" options="{'no_create_edit': True}"/>-->
-<!--                                    <field class="o_address_state" name="ward" placeholder="Phường(Xã)"-->
-<!--                                           domain="[('district_id', '=', district)]"-->
-<!--                                           options="{'no_create_edit': True}"/>-->
-<!--                                    <field class="o_address_street" name="street" placeholder="Đường"/>-->
-<!--                                </div>-->
-<!--                            </field>-->
-                        </group>
-
-                        <group>
-                            <label for="rented_land_area" string="Diện tích đất thuê"
+                            <field name="rented_land_area" string="Diện tích đất thuê" class="o_input"
                                    attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}"/>
-                            <div>
-                                <field name="rented_land_area" string="Diện tích đất thuê"
-                                       attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}"/>
-                            </div>
                         </group>
-                        <group></group>
 
                         <group>
-                            <label for="representative" string=" Người đại diện" class=" required"/>
-                            <div>
-                                <field name="representative" string=" Người đại diện"/>
-                            </div>
-                            <label for="representative_email" string="Email"/>
-                            <div>
-                                <field name="representative_email" string="Email"/>
+                            <field name="active" invisible="1"/>
+                            <field name="customer_code" string="Mã khách hàng"
+                                   attrs="{'invisible':[('active','=', 'ca_nhan')]}"/>
+                            <field name="identifier" string="Mã định danh"/>
+                            <field name="abbreviations" string="Tên viết tắt" class="o_input"/>
+                            <field name="phone" string="Số điện thoại"/>
+                            <field name="business_areas" string="Lĩnh vực kinh doanh" class="o_input"/>
+                            <label for="sales_office_address" class="ondoo_required_label fw-bold"
+                                   string="Văn phòng giao dịch"
+                                   attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}">
+                                <field name="sales_office_address" invisible="1"/>
+                            </label>
+                            <div class="o_address_format" attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}">
+                                <field name="so_country" placeholder="Quốc gia" class="o_address_city"
+                                       options="{'no_create': True, 'no_open':True}"/>
+                                <field name="so_state" class="o_address_state" placeholder="Tỉnh(Thành phố)"
+                                       domain="[('country_id', '=', so_country)]"
+                                       options="{'no_create': True, 'no_open':True}"/>
+                                <field name="so_district" placeholder="Quận(Huyện)" class="o_address_city"
+                                       domain="[('state_id', '=', so_state)]"
+                                       options="{'no_create': True, 'no_open':True}"/>
+                                <field name="so_ward" class="o_address_state" placeholder="Phường(Xã)"
+                                       domain="[('district_id', '=', so_district)]"
+                                       options="{'no_create': True, 'no_open':True}"/>
+                                <div name="so_street" class="d-flex justify-content-between">
+                                    <field name="street" placeholder="Đường" class="o_address_country"/>
+                                </div>
                             </div>
                         </group>
-
-
                         <group>
-                            <label for="position" string="Chức vụ"/>
-                            <div>
-                                <field name="position" string="Chức vụ" class="oe_inline"/>
-                            </div>
-                            <label for="representative_phone" string="Số điện thoại"/>
-                            <div>
-                                <field name="representative_phone" string="Số điện thoại"/>
-                            </div>
+                            <field name="representative" string="Người đại diện"
+                                   attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}"/>
+                            <field name="representative_email" string="Email" class="o_input"
+                                   attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}"/>
                         </group>
-
-
+                        <group>
+                            <field name="position" string="Chức vụ" class="o_input"
+                                   attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}"/>
+                            <field name="representative_phone" string="Số điện thoại" class="o_input"
+                                   attrs="{'invisible':[('customer_type','=', 'ca_nhan')]}"/>
+                        </group>
                     </group>
+
                     <group>
-                        <label for="description" string="Ghi chú" class="label"/>
-                        <div>
-                            <field name="description" nolabel="1"/>
-                        </div>
+                        <field name="description" string="Ghi chú" class="o_input"/>
                     </group>
                     <group string="THÔNG TIN RIÊNG">
                         <field name="private_information_ids" string="">
@@ -155,8 +112,6 @@
                             </tree>
                         </field>
                     </group>
-
-
                 </sheet>
             </form>
         </field>

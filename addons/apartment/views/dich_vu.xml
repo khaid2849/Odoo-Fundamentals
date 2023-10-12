@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_apartment_dich_vu_tree" model="ir.ui.view">
+        <field name="name">apartment.dich.vu.tree</field>
+        <field name="model">apartment.dich.vu</field>
+        <field name="arch" type="xml">
+            <tree string="Danh mục dịch vụ" class="text-center" multi_edit="1">
+                <field name="currency_id" invisible="1"/>
+                <field name="code" string="Mã"/>
+                <field name="name" string="Tên dịch vụ"/>
+                <field name="price" string="Đơn giá" widget="monetary" options="{'currency_field': 'currency_id'}"
+                       class="o_list_renderer o_list_table thead o_list_number_th"/>
+                <field name="write_uid" string="Người cập nhật" optional="show"/>
+                <field name="write_date" string="Ngày cập nhật" optional="show"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_apartment_dich_vu_form" model="ir.ui.view">
+        <field name="name">apartment.dich.vu.form</field>
+        <field name="model">apartment.dich.vu</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group string="THÔNG TIN DỊCH VỤ">
+                        <group>
+                            <field name="code" string="Mã dịch vụ"/>
+                            <field name="provider" string="Nhà cung cấp"/>
+                        </group>
+                        <group>
+                            <field name="name" string="Tên dịch vụ"/>
+                            <field name="description" string="Ghi chú" class="o_input"/>
+                        </group>
+                    </group>
+
+                    <group string="GIÁ DỊCH VỤ">
+                        <group>
+                            <field name="price" string="Giá dịch vụ" widget='monetary'
+                                   options="{'currency_field': 'currency_id', 'field_digits': True}"/>
+                            <field name="uom" string="Đơn vị tính"/>
+                        </group>
+                        <group>
+                            <field name="tax_id" string="Thuế"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_dich_vu_search" model="ir.ui.view">
+        <field name="name">apartment.dich.vu.search</field>
+        <field name="model">apartment.dich.vu</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="code" string="Mã"/>
+                <field name="name" string="Tên"/>
+                <field name="provider" string="Nhà cung cấp"/>
+
+                <filter string="Đã lưu trữ" name="active" domain="[('active' ,'=' ,False)]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Ngày tạo" name="create_date" domain="{'group_by' :'create_date' }"/>
+                    <filter string="Người tạo" name="create_uid" domain="{'group_by' :'create_uid' }"/>
+                    <filter string="Nhà cung cấp" name="provider" domain="{'group_by' :'provider' }"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_apartment_dich_vu" model="ir.actions.act_window">
+        <field name="name">Danh mục dịch vụ</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">apartment.dich.vu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="menu_tong_quan_khu_cong_nghiep_dich_vu" model="ir.ui.menu">
+        <field name="name">Danh mục dịch vụ</field>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep"/>
+        <field name="action" ref="action_apartment_dich_vu"/>
+        <field name="sequence" eval="30"/>
+    </record>
+</odoo>

@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<odoo>
+<!--<?xml version="1.0" encoding="UTF-8"?>-->
+<!--<odoo>-->
 
-    <record id="view_apartment_tai_khoan_tree" model="ir.ui.view">
-        <field name="name">apartment.tai.khoan.tree</field>
-        <field name="model">apartment.tai.khoan</field>
-        <field name="arch" type="xml">
-            <tree string="Danh mục nhà cung cấp" class="text-center" editable="bottom">
-                <field name="name" string="Tên" />
-                <field name="email" string="Email đăng nhập" optional="show" />
-                <field name="account_type" string="Loại tài khoản" optional="show" />
-                <field name="status" string="Trạng thái" optional="show" />
-            </tree>
-        </field>
-    </record>
+<!--    <record id="view_apartment_tai_khoan_tree" model="ir.ui.view">-->
+<!--        <field name="name">apartment.tai.khoan.tree</field>-->
+<!--        <field name="model">apartment.tai.khoan</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <tree string="Danh mục nhà cung cấp" class="text-center" editable="bottom">-->
+<!--                <field name="name" string="Tên" />-->
+<!--                <field name="email" string="Email đăng nhập" optional="show" />-->
+<!--                <field name="account_type" string="Loại tài khoản" optional="show" />-->
+<!--                <field name="status" string="Trạng thái" optional="show" />-->
+<!--            </tree>-->
+<!--        </field>-->
+<!--    </record>-->
 
-    <record id="action_apartment_tai_khoan" model="ir.actions.act_window">
-        <field name="name">Danh mục nhà cung cấp</field>
-        <field name="type">ir.actions.act_window</field>
-        <field name="res_model">apartment.tai.khoan</field>
-        <field name="view_mode">tree,form</field>
-    </record>
+<!--    <record id="action_apartment_tai_khoan" model="ir.actions.act_window">-->
+<!--        <field name="name">Danh mục nhà cung cấp</field>-->
+<!--        <field name="type">ir.actions.act_window</field>-->
+<!--        <field name="res_model">apartment.tai.khoan</field>-->
+<!--        <field name="view_mode">tree,form</field>-->
+<!--    </record>-->
 
-    <record id="menu_quan_ly_danh_muc_lien_he_nha_cung_cap" model="ir.ui.menu">
-        <field name="name">Danh mục nhà cung cấp</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he" />
-        <field name="action" ref="action_apartment_tai_khoan" />
-        <field name="sequence" eval="20" />
-    </record>
+<!--    <record id="menu_quan_ly_danh_muc_lien_he_nha_cung_cap" model="ir.ui.menu">-->
+<!--        <field name="name">Danh mục nhà cung cấp</field>-->
+<!--        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he" />-->
+<!--        <field name="action" ref="action_apartment_tai_khoan" />-->
+<!--        <field name="sequence" eval="20" />-->
+<!--    </record>-->
 
-</odoo>
+<!--</odoo>-->
