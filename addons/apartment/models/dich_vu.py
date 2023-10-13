@@ -25,7 +25,7 @@ class DichVu(models.Model):
         domain=[("type_tax_use", "=", "sale")],
     )
     product_id = fields.Many2one(comodel_name="product.template")
-    active = fields.Boolean()
+    active = fields.Boolean(default=True)
 
     @api.depends("write_date")
     def _compute_write_date(self):

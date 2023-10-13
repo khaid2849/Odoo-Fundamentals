@@ -8,7 +8,7 @@ class NganhNghe(models.Model):
     code = fields.Char(string="Mã", required=True)
     name = fields.Char(string="Tên", required=True)
     description = fields.Text(string="Ghi chú")
-    active = fields.Boolean(default=False)
+    active = fields.Boolean(default=True)
 
     @api.depends("write_date")
     def _compute_write_date(self):

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_apartment_quoc_gia_tree" model="ir.ui.view">
+        <field name="name">apartment.quoc.gia.tree</field>
+        <field name="model">res.country</field>
+        <field name="inherit_id" ref="base.view_country_tree"/>
+        <field name="arch" type="xml">
+
+        </field>
+    </record>
+
+    <record id="action_apartment_quoc_gia" model="ir.actions.act_window">
+        <field name="name">Quốc gia</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.country</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="menu_quan_ly_danh_muc_dia_chinh_quoc_gia" model="ir.ui.menu">
+        <field name="name">Quốc gia</field>
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_dia_chinh"/>
+        <field name="action" ref="action_apartment_quoc_gia"/>
+        <field name="sequence" eval="10"/>
+    </record>
+
+</odoo>

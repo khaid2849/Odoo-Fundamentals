@@ -4,7 +4,7 @@ from odoo.exceptions import ValidationError
 
 phone_pattern = r"^\+\d{1,12}$"
 email_pattern = r"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$"
-tax_pattern = r"^(?=.*[0-9])(?=.*-)[0-9-]+$"
+tax_pattern = r"^[0-9-]$"
 
 
 class ChuDauTu(models.Model):
@@ -82,8 +82,8 @@ class ChuDauTu(models.Model):
     @api.model
     def create(self, vals):
         vals["code"] = (
-            self.env["ir.sequence"].next_by_code("apartment.chu.dau.tu.sequence")
-            or "New"
+                self.env["ir.sequence"].next_by_code("apartment.chu.dau.tu.sequence")
+                or "New"
         )
 
         partner_vals = {
@@ -93,6 +93,7 @@ class ChuDauTu(models.Model):
             "street": vals.get("street"),
             "state_id": vals.get("state", False),
             "country_id": vals.get("country", False),
+            "vat": vals.get("identifier") if vals.get("identifier_type") == "ma_so_thue" else None
         }
         partner = self.env["res.partner"].create(partner_vals)
         vals["partner_id"] = partner.id

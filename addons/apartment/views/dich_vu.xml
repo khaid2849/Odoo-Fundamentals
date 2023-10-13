@@ -57,7 +57,7 @@
                 <field name="name" string="Tên"/>
                 <field name="provider" string="Nhà cung cấp"/>
 
-                <filter string="Đã lưu trữ" name="active" domain="[('active' ,'=' ,False)]"/>
+                <filter string="Đã lưu trữ" name="active" domain="[('active' ,'=' ,True)]"/>
 
                 <group expand="0" string="Group By">
                     <filter string="Ngày tạo" name="create_date" domain="{'group_by' :'create_date' }"/>

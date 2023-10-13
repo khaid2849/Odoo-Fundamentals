@@ -112,7 +112,7 @@ class KhachHang(models.Model):
         inverse_name="customer_ids",
         string="Thông tin riêng",
     )
-    active = fields.Boolean()
+    active = fields.Boolean(default=True)
 
     @api.onchange("name")
     def _onchange_name(self):

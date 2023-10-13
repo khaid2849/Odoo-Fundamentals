@@ -5,10 +5,10 @@
         <field name="model">apartment.so.do.kcn</field>
         <field name="arch" type="xml">
             <tree string="Sơ đồ Khu Công nghiệp" class="text-center">
-                <field name="name" string="Tên sơ đồ" />
-                <field name="acreage" string="Diện tích" />
-                <field name="write_uid" string="Người cập nhật" optional="show" />
-                <field name="write_date" string="Ngày cập nhật" optional="show" />
+                <field name="name" string="Tên sơ đồ"/>
+                <field name="acreage" string="Diện tích"/>
+                <field name="write_uid" string="Người cập nhật" optional="show"/>
+                <field name="write_date" string="Ngày cập nhật" optional="show"/>
             </tree>
         </field>
     </record>
@@ -18,44 +18,65 @@
         <field name="model">apartment.so.do.kcn</field>
         <field name="arch" type="xml">
             <form>
-                <sheet>
-                    <div>
-                        <label for="name" />
-                        <h3>
-                            <field name="name" />
-                        </h3>
+                <link rel="stylesheet" href="/apartment/static/src/css/so_do_kcn.css"></link>
+                <sheet style="max-width:20%%">
+                    <div class="oe_title">
+                        <label for="name" string="Tên sơ đồ"/>
+                        <h4>
+                            <field name="name" style="width:145%"/>
+                        </h4>
                     </div>
-                    <div>
-
-                        <label for="acreage" />
-                        <group>
-                            <h3>
-                                <field name="acreage" />
-                            </h3>
-                            <h3>
-                                <field name="uom" style="width:40%" />
-                            </h3>
-                        </group>
+                    <div class="oe_title">
+                        <label for="acreage" string="Diện tích">
+                            <field name="acreage" invisible="1"/>
+                        </label>
+                        <h4>
+                            <div class="o_address_format" style="width: 172%;">
+                                <field name="acreage" class="o_address_city"/>
+                                <field name="uom" class="o_address_city" style="width: 45%;"/>
+                            </div>
+                        </h4>
                     </div>
-                    <div>
-                        <label for="address" />
-                        <h3>
-                            <field name="address" class="o_input" />
-                        </h3>
-                        <label for="description" />
-                        <h3>
-                            <field name="description" class="o_input" />
-                        </h3>
-                        <label for="diagram_file" />
-                        <h3>
-                            <field name="diagram_file" />
-                        </h3>
+                    <div class="oe_title">
+                        <label for="address" class="ondoo_required_label" string="Địa chỉ"/>
+                        <h4>
+                            <field name="address" class="o_input" style="width:150%"/>
+                        </h4>
+                    </div>
+                    <div class="oe_title">
+                        <label for="description" string="Mô tả"/>
+                        <h4>
+                            <field name="description" class="o_input" style="width:145%"/>
+                        </h4>
+                    </div>
+                    <div class="oe_title">
+                        <label for="diagram_file" string="Tệp tin sơ đồ"/>
+                        <h4>
+                            <field name="diagram_file"/>
+                        </h4>
                     </div>
                 </sheet>
                 <sheet>
-                    <field name="diagram_file" widget="image" />
+                    <field name="diagram_file" widget="image"/>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="view_so_do_kcn_search" model="ir.ui.view">
+        <field name="name">apartment.so.do.kcn.search</field>
+        <field name="model">apartment.so.do.kcn</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name" string="Tên"/>
+
+                <filter string="Đã lưu trữ" name="active" domain="[('active' ,'=' ,True)]"/>
+
+                <group expand="0" string="Group By">
+                    <filter string="Ngày tạo" name="create_date" domain="" context="{'group_by' :'create_date' }"/>
+                    <filter string="Người tạo" name="create_uid" domain="" context="{'group_by' :'create_uid' }"/>
+                </group>
+            </search>
         </field>
     </record>
 
@@ -68,8 +89,8 @@
 
     <record id="menu_tong_quan_khu_cong_nghiep_so_do_kcn" model="ir.ui.menu">
         <field name="name">Sơ đồ tổng thể KCN</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep" />
-        <field name="action" ref="action_apartment_so_do_kcn" />
-        <field name="sequence" eval="10" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_tong_quan_khu_cong_nghiep"/>
+        <field name="action" ref="action_apartment_so_do_kcn"/>
+        <field name="sequence" eval="10"/>
     </record>
 </odoo>

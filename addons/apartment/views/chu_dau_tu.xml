@@ -5,13 +5,13 @@
         <field name="model">apartment.chu.dau.tu</field>
         <field name="arch" type="xml">
             <tree string="Danh mục chủ đầu tư" class="text-center">
-                <field name="code" string="Mã" readonly="1" />
-                <field name="identifier_type" string="Loại định danh" optional="show" />
-                <field name="identifier" string="Mã định danh" />
-                <field name="name" string="Tên" />
-                <field name="phone" string="Số điện thoại" optional="show" />
-                <field name="email" string="Email" optional="show" />
-                <field name="address" string="Địa chỉ" optional="show" />
+                <field name="code" string="Mã" readonly="1"/>
+                <field name="identifier_type" string="Loại định danh" optional="show"/>
+                <field name="identifier" string="Mã định danh"/>
+                <field name="name" string="Tên"/>
+                <field name="phone" string="Số điện thoại" optional="show"/>
+                <field name="email" string="Email" optional="show"/>
+                <field name="address" string="Địa chỉ" optional="show"/>
             </tree>
         </field>
     </record>
@@ -24,35 +24,44 @@
                 <sheet>
                     <group string="THÔNG TIN CHỦ ĐẦU TƯ">
                         <group>
-                            <field name="identifier_type" string="Loại định danh" />
-                            <field name="name" string="Tên" />
-                            <field name="email" string="Email" />
+                            <field name="identifier_type" string="Loại định danh"/>
+                            <field name="name" string="Tên"/>
+                            <field name="email" string="Email"/>
+                            <separator></separator>
+
+                            <label for="representative" stirng="Người đại diện"/>
+                            <div>
+                                <field name="representative"/>
+                            </div>
+
                         </group>
                         <group>
-                            <field name="identifier" stirng="Mã định danh" />
-                            <field name="phone" stirng="Số điện thoại" />
+                            <field name="identifier" stirng="Mã định danh"/>
+                            <field name="phone" stirng="Số điện thoại"/>
                             <label for="address" class="ondoo_required_label fw-bold" string="Địa chỉ">
-                                <field name="address" invisible="1" />
+                                <field name="address" invisible="1"/>
                             </label>
                             <div class="o_address_format">
-                                <field name="country" placeholder="Quốc gia" class="o_address_city" options="{'no_create': True, 'no_open':True}" />
-                                <field name="state" class="o_address_state" placeholder="Tỉnh(Thành phố)" domain="[('country_id', '=', country)]" options="{'no_create': True, 'no_open':True}" />
-                                <field name="district" placeholder="Quận(Huyện)" class="o_address_city" domain="[('state_id', '=', state)]" options="{'no_create': True, 'no_open':True}" />
-                                <field name="ward" class="o_address_state" placeholder="Phường(Xã)" domain="[('district_id', '=', district)]" options="{'no_create': True, 'no_open':True}" />
+                                <field name="country" placeholder="Quốc gia" class="o_address_city"
+                                       options="{'no_create': True, 'no_open':True}"/>
+                                <field name="state" class="o_address_state" placeholder="Tỉnh(Thành phố)"
+                                       domain="[('country_id', '=', country)]"
+                                       options="{'no_create': True, 'no_open':True}"/>
+                                <field name="district" placeholder="Quận(Huyện)" class="o_address_city"
+                                       domain="[('state_id', '=', state)]"
+                                       options="{'no_create': True, 'no_open':True}"/>
+                                <field name="ward" class="o_address_state" placeholder="Phường(Xã)"
+                                       domain="[('district_id', '=', district)]"
+                                       options="{'no_create': True, 'no_open':True}"/>
                                 <div name="street" class="d-flex justify-content-between">
-                                    <field name="street" placeholder="Đường" class="o_address_country" />
+                                    <field name="street" placeholder="Đường" class="o_address_country"/>
                                 </div>
                             </div>
-                        </group>
-                        <group>
-                            <field name="representative" stirng="Người đại diện" />
-                        </group>
-                        <group>
-                            <field name="position" stirng="Chức vụ" class="o_input" style="width:95%;margin-left:8%;" />
+                            <field name="position" stirng="Chức vụ" class="o_input"/>
                         </group>
                     </group>
                     <group>
-                        <field name="description" string="Ghi chú" style="padding-right:52px;" class="o_input" />
+                        <field name="description" string="Ghi chú" style="padding-right:52px;" class="o_input"/>
                     </group>
                 </sheet>
             </form>
@@ -64,17 +73,17 @@
         <field name="model">apartment.chu.dau.tu</field>
         <field name="arch" type="xml">
             <search>
-                <field name="code" string="Mã" />
-                <field name="identifier" string="Mã định danh" />
-                <field name="name" string="Tên" />
-                <field name="phone" string="Số điện thoại" />
-                <field name="email" string="Email" />
+                <field name="code" string="Mã"/>
+                <field name="identifier" string="Mã định danh"/>
+                <field name="name" string="Tên"/>
+                <field name="phone" string="Số điện thoại"/>
+                <field name="email" string="Email"/>
 
-                <filter string="Đã lưu trữ" name="active" domain="[('active' ,'=' ,False)]" />
+                <filter string="Đã lưu trữ" name="active" domain="[('active' ,'=' ,True)]"/>
 
                 <group expand="0" string="Group By">
-                    <filter string="Ngày tạo" name="create_date" domain="{'group_by' :'create_date' }" />
-                    <filter string="Người tạo" name="create_uid" domain="{'group_by' :'create_uid' }" />
+                    <filter string="Ngày tạo" name="create_date" domain="" context="{'group_by' :'create_date' }"/>
+                    <filter string="Người tạo" name="create_uid" domain="" context="{'group_by' :'create_uid' }"/>
                 </group>
             </search>
         </field>
@@ -97,9 +106,9 @@
 
     <record id="menu_quan_ly_danh_muc_lien_he_chu_dau_tu" model="ir.ui.menu">
         <field name="name">Danh mục chủ đầu tư</field>
-        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he" />
-        <field name="action" ref="action_apartment_chu_dau_tu" />
-        <field name="sequence" eval="10" />
+        <field name="parent_id" ref="menu_quan_ly_danh_muc_lien_he"/>
+        <field name="action" ref="action_apartment_chu_dau_tu"/>
+        <field name="sequence" eval="10"/>
     </record>
 
 </odoo>
